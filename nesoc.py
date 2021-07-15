@@ -34,3 +34,6 @@ try:
             json.dump(data,f)
 except:
     traceback.print_exc()
+    
+#crontab
+#* 10-16 * * * python nseoc.py
