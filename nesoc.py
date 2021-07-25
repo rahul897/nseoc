@@ -95,15 +95,15 @@ equities = [
 'JSWSTEEL',
 'JUBLFOOD',
 'KOTAKBANK',
-#'L&amp;TFH',
+'L%26TFH',
 'LALPATHLAB',
 'LICHSGFIN',
 'LT',
 'LTI',
 'LTTS',
 'LUPIN',
-#'M&amp;M',
-#'M&amp;MFIN',
+'M%26M',
+'M%26MFIN',
 'MANAPPURAM',
 'MARICO',
 'MARUTI',
@@ -189,7 +189,7 @@ try:
         ref_time = data['timestamp']
         d = datetime.strptime(ref_time, "%d-%b-%Y %H:%M:%S")
         d = d.strftime("%d%m%Y_%H%M%S")
-        with open(os.path.join(path, d + '_' + index + '.json'), 'w') as f:
+        with open(os.path.join(path, index + '_' + d + '.json'), 'w') as f:
             json.dump(data, f)
 
     for equity in equities:
@@ -203,7 +203,7 @@ try:
         ref_time = data['timestamp']
         d = datetime.strptime(ref_time, "%d-%b-%Y %H:%M:%S")
         d = d.strftime("%d%m%Y_%H%M%S")
-        with open(os.path.join(path, d + '_' + equity + '.json'), 'w') as f:
+        with open(os.path.join(path, equity + '_' + d + '.json'), 'w') as f:
             json.dump(data, f)
 except:
     traceback.print_exc()
